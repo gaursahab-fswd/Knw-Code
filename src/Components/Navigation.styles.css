@@ -1,0 +1,14 @@
+.navbar-brand img{
+    width: 40px;
+}
+
+.navbar-nav li a{
+    color: #fff;
+}
+
+.navbar-nav li a:hover{
+    color: #fd7500;
+}
+.dropdown-menu{
+    background-color: #212529;
+}
