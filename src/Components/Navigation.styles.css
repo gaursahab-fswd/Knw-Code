@@ -12,3 +12,37 @@
 .dropdown-menu{
     background-color: #212529;
 }
+.Nav-Enr{
+    background: #fd7500;
+    border-radius: 20px;
+    color: #fff;
+    transition: ease-in .2s;
+}
+.Nav-Enr:hover{
+    border:2px solid #fd7500;
+    border-radius: 20px;
+    color: #fd7500;
+    background-color: transparent;
+    
+}
+.Nav-login{
+    border: 1px solid #fff;
+    border-radius: 20px;
+    color: #fff;
+    transition: ease-in .2s;
+}
+.Nav-login:hover{
+    background-color: #fd7500;
+    color: #212529;
+    border: none;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: #fff;
+  }
+  .navbar-light .navbar-toggler {
+    color: transparent;
+  }
+  .navbar-light .navbar-toggler-icon {
+    background-image: url("https://cdn-user-icons.flaticon.com/14186/14186559/1643822503427.svg?token=exp=1643823404~hmac=5ff6579316c6c940bca8eb63158c3088");
+    color: #fff;
+  }
