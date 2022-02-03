@@ -1,14 +1,10 @@
 .navbar-brand img{
     width: 40px;
 }
-
-.navbar-nav li a{
-    color: #fff;
+.navbar{
+  background-color: rgb(14, 4, 4);
 }
 
-.navbar-nav li a:hover{
-    color: #fd7500;
-}
 .dropdown-menu{
     background-color: #212529;
 }
@@ -39,10 +35,13 @@
 .navbar-light .navbar-nav .nav-link {
     color: #fff;
   }
+  .navbar-light .navbar-nav .nav-link:hover {
+    color: #fd7500;
+  }
   .navbar-light .navbar-toggler {
     color: transparent;
   }
   .navbar-light .navbar-toggler-icon {
-    background-image: url("https://cdn-user-icons.flaticon.com/14186/14186559/1643822503427.svg?token=exp=1643823404~hmac=5ff6579316c6c940bca8eb63158c3088");
+    background-image: url("https://cdn-user-icons.flaticon.com/14186/14186559/1643892036437.svg?token=exp=1643892938~hmac=00f36f7a352ae4f2b62976b61b8838d4");
     color: #fff;
   }

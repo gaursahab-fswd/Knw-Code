@@ -5,7 +5,7 @@ import "./Navigation.styles.css";
 const Navigation = () => {
   return (
     <div>
-      <nav className="navbar navbar-expand-lg navbar-light bg-dark">
+      <nav className="navbar navbar-expand-lg navbar-light  position-sticky">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
             <img src={Logo} alt="Logo-image" />
