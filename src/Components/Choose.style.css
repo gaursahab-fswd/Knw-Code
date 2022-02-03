@@ -1,0 +1,44 @@
+#choose-image{
+    width: 300px;
+}
+.courses-section img{
+    width: 80px;
+}
+#chooseus-text{
+    color: #fd7500;
+    text-align: right;
+}
+#choose-image{
+    text-align: left;
+}
+#chooseus-para{
+    color: #fff;
+    font-size: 16px;
+    text-align:right;
+}
+
+#chooseus-learn{
+   border: 1px solid #fd7500;
+   ;
+   color: #fd7500;
+   padding: 10px 25px 10px 25px;
+}
+#chooseus-learn:hover{
+   background-color:  #fd7500;
+    ;
+    color: #fff;
+    padding: 10px 25px 10px 25px;
+ }
+
+ @media only screen and (max-width: 600px) {
+
+    #chooseus-learn{
+        text-align: center;
+    }
+    #chooseus-para{
+        text-align: center;
+    }
+    #chooseus-text{
+        text-align: center;
+    }
+  }

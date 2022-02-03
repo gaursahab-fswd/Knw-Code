@@ -6,12 +6,12 @@ const Header = () => {
   return (
     <div className="container-fluid text-light header-section">
       <div className="row">
-        <div className="col-lg-6 pt-4 header-content">
-          <div className="container pt-4">
-            <h1 className="animate__animated animate__jackInTheBox display-1">
-              &lt;Know <span id="header-heading">Code&#47;&gt;</span>
+        <div className="col-lg-6 header-content">
+          <div className="container">
+            <h1 className="animate__animated animate__jackInTheBox display-4">
+          Let's grow <br/> your coding  level with <br/> <span id="header-para">Know Code</span>  
             </h1>
-            <p id="header-para">We know the value of learning.</p>
+            <p id="header-paragraph">We know the value of learning.</p>
             <button id="know-button" className="btn ">
               KNOW MORE
             </button>

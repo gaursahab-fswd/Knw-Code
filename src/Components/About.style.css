@@ -1,0 +1,16 @@
+.about-section{
+
+    width: 100%;
+    background-color: rgb(10, 10, 10);
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+#about-heading{
+    color: rgb(209, 209, 209);
+    text-align: left;
+}
+#about-show{
+    color: #fd7500;;
+}
+
