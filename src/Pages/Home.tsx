@@ -4,6 +4,7 @@ import Header from "../Components/Header";
 import About from "../Components/About";
 import Choose from "../Components/Choose";
 import Footer from "../Components/Footer";
+import LogIn from "./LogIn";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <About />
       <Choose />
       <Footer />
+      <LogIn/>
     </>
   );
 };
