@@ -1,0 +1,27 @@
+.Footer{
+
+    height: 300px;
+    background-color: rgb(10, 10, 10);
+    text-align: left;
+}
+
+#footer-logo-text{
+    color: #fd7500;
+    font-size: 16px;
+}
+
+.Footer img{
+    width: 100px;
+}
+
+h5{
+    color: #fd7500;
+}
+
+.icons-media img{
+    width: 30px;
+    padding-left:10px;
+}
+.icons-media img:hover{
+    cursor: pointer;
+}

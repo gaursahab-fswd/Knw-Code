@@ -4,7 +4,7 @@ import '../Components/Choose.style.css';
 
 const Choose = () =>{
     return(
-        <div className="container pt-4">
+        <div className="container p-4">
             <div className="row">
                 <div className="col">
                     <img id='choose-image' src={image} alt="" />
