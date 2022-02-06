@@ -1,27 +1,36 @@
-import React from 'react';
-import '../Components/Signup.style.css';
+import React from "react";
+import "../Components/Signup.style.css";
 
-const SignUp = () =>{
-    return(
-        <div className="container-fluid">
-             <div className="container">
+const SignUp = () => {
+  return (
+    <div className="container-fluid">
+      <div className="container">
         <div className="row">
           <div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
             <div className="card card-signin my-5">
               <div className="card-body">
-                <h5 className="card-title text-center">Log In</h5>
+                <h5 className="card-title text-center">Sign Up</h5>
                 <form className="form-signin">
                   <div className="form-label-group">
                     <input
-                      type="email"
+                      type="text"
                       id="inputEmail"
                       className="form-control"
                       placeholder="Email address"
                       required
                     />
-                    <label>Email address</label>
+                    <label>Enter Your Name</label>
                   </div>
-
+                  <div className="form-label-group">
+                    <input
+                      type="text"
+                      id="inputEmail"
+                      className="form-control"
+                      placeholder="Email address"
+                      required
+                    />
+                    <label>Enter Email</label>
+                  </div>
                   <div className="form-label-group">
                     <input
                       type="password"
@@ -32,16 +41,36 @@ const SignUp = () =>{
                     />
                     <label>Password</label>
                   </div>
-
-                  <div className="custom-control custom-checkbox mb-3">
+                  <div className="form-label-group">
                     <input
-                      type="checkbox"
-                      className="custom-control-input"
-                      id="customCheck1"
+                      type="password"
+                      id="inputPassword"
+                      className="form-control"
+                      placeholder="Password"
+                      required
                     />
-                    <label className="custom-control-label">
-                      Remember password
-                    </label>
+                    <label>Confirm Password</label>
+                  </div>
+                  <div className="p-2">
+                      <p>Gender</p>
+                    <input type="radio" name="radio" value="radio" />
+                    <label>Male</label>&nbsp;&nbsp;
+                    <input type="radio" name="radio" value="radio" />
+                    <label>Female</label>&nbsp;&nbsp;
+                    <input type="radio" name="radio" value="radio" />
+                    <label>Other</label>
+                  </div>
+                  <div>
+                    <div className="form-label-group pt-2">
+                      <input
+                        type="text"
+                        id="inputPassword"
+                        className="form-control"
+                        placeholder="Password"
+                        required
+                      />
+                      <label>Phone</label>
+                    </div>
                   </div>
                   <button
                     className="btn btn-lg btn-primary btn-block text-uppercase"
@@ -49,28 +78,14 @@ const SignUp = () =>{
                   >
                     Sign in
                   </button>
-                  <hr className="my-4" />
-                  <button
-                    className="btn btn-lg btn-google btn-block text-uppercase"
-                    type="submit"
-                  >
-                    <i className="fab fa-google mr-2"></i> Sign in with Google
-                  </button>
-                  <button
-                    className="btn btn-lg btn-facebook btn-block text-uppercase"
-                    type="submit"
-                  >
-                    <i className="fab fa-facebook-f mr-2"></i> Sign in with
-                    Facebook
-                  </button>
                 </form>
               </div>
             </div>
           </div>
         </div>
       </div>
-        </div>
-    );
-}
+    </div>
+  );
+};
 
 export default SignUp;

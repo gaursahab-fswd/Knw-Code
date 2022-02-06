@@ -1,6 +1,7 @@
 import React from "react";
 import Logo from "../common/logo.png";
 import "./Navigation.styles.css";
+import { BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
 
 const Navigation = () => {
   return (
@@ -70,9 +71,9 @@ const Navigation = () => {
               </li>
             </ul>
             <form className="d-flex justify-content-center">
-              <button className="btn btn-outline-default Nav-login" type="submit">
-                LogIn
-              </button> &nbsp;&nbsp;
+            
+              <Link className="btn btn-outline-default Nav-login">  LogIn </Link> 
+              &nbsp;&nbsp;
               <button className="btn btn-outline-default Nav-Enr" type="submit">
                 Enroll Now
               </button>
