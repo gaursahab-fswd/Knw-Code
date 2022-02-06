@@ -2,88 +2,40 @@ import React from "react";
 import "../Components/Signup.style.css";
 
 const SignUp = () => {
+  const register = () => {};
+
+  const login = () => {};
   return (
-    <div className="container-fluid">
-      <div className="container">
-        <div className="row">
-          <div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
-            <div className="card card-signin my-5">
-              <div className="card-body">
-                <h5 className="card-title text-center">Sign Up</h5>
-                <form className="form-signin">
-                  <div className="form-label-group">
-                    <input
-                      type="text"
-                      id="inputEmail"
-                      className="form-control"
-                      placeholder="Email address"
-                      required
-                    />
-                    <label>Enter Your Name</label>
-                  </div>
-                  <div className="form-label-group">
-                    <input
-                      type="text"
-                      id="inputEmail"
-                      className="form-control"
-                      placeholder="Email address"
-                      required
-                    />
-                    <label>Enter Email</label>
-                  </div>
-                  <div className="form-label-group">
-                    <input
-                      type="password"
-                      id="inputPassword"
-                      className="form-control"
-                      placeholder="Password"
-                      required
-                    />
-                    <label>Password</label>
-                  </div>
-                  <div className="form-label-group">
-                    <input
-                      type="password"
-                      id="inputPassword"
-                      className="form-control"
-                      placeholder="Password"
-                      required
-                    />
-                    <label>Confirm Password</label>
-                  </div>
-                  <div className="p-2">
-                      <p>Gender</p>
-                    <input type="radio" name="radio" value="radio" />
-                    <label>Male</label>&nbsp;&nbsp;
-                    <input type="radio" name="radio" value="radio" />
-                    <label>Female</label>&nbsp;&nbsp;
-                    <input type="radio" name="radio" value="radio" />
-                    <label>Other</label>
-                  </div>
-                  <div>
-                    <div className="form-label-group pt-2">
-                      <input
-                        type="text"
-                        id="inputPassword"
-                        className="form-control"
-                        placeholder="Password"
-                        required
-                      />
-                      <label>Phone</label>
-                    </div>
-                  </div>
-                  <button
-                    className="btn btn-lg btn-primary btn-block text-uppercase"
-                    type="submit"
-                  >
-                    Sign in
-                  </button>
-                </form>
-              </div>
-            </div>
+    <div className="container bg-light">
+      <h1 className="text-primary">Sign Up</h1>
+      <form>
+        <div className="form-row">
+          <div className="form-group col-md-12">
+            <label>Name</label>
+            <input
+              type="text"
+              className="form-control"
+              id="inputEmail4"
+              placeholder="First Name"
+            />
+          </div>
+          <div className="form-group col-md-12">
+            <label>Password</label>
+            <input
+              type="password"
+              className="form-control"
+              id="inputPassword4"
+              placeholder="Password"
+            />
           </div>
         </div>
-      </div>
+
+        <div className="form-row"></div>
+
+        <button type="submit" className="btn btn-primary mb-4 mt-4">
+          Sign in
+        </button>
+      </form>
     </div>
   );
 };

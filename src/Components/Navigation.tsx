@@ -1,7 +1,7 @@
 import React from "react";
 import Logo from "../common/logo.png";
 import "./Navigation.styles.css";
-import { BrowserRouter as Router, Routes, Route, Navigate} from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, NavLink} from 'react-router-dom';
 
 const Navigation = () => {
   return (
@@ -72,11 +72,11 @@ const Navigation = () => {
             </ul>
             <form className="d-flex justify-content-center">
             
-              <Link className="btn btn-outline-default Nav-login">  LogIn </Link> 
+              <NavLink to='/login' className="btn btn-outline-default Nav-login">  LogIn </NavLink> 
               &nbsp;&nbsp;
-              <button className="btn btn-outline-default Nav-Enr" type="submit">
+              <NavLink to='/signup' className="btn btn-outline-default Nav-Enr" type="submit">
                 Enroll Now
-              </button>
+              </NavLink>
             </form>
           </div>
         </div>

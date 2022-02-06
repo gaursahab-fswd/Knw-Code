@@ -1,7 +1,35 @@
-import React from "react";
-import '../Components/Login.style.css'
+import React, { useState } from "react";
+import "../Components/Login.style.css";
+import { signInWithEmailAndPassword } from "firebase/auth";
+import { auth } from "./Firebase-config";
+import { useNavigate } from "react-router-dom";
+
+const StateInterface = {
+  email: "",
+  password: "",
+};
 
 const LogIn = () => {
+  const [form, setForm] = useState(StateInterface);
+  const navigate = useNavigate();
+  const changeHandler = (event: any) => {
+    setForm({ ...form, [event.target.name]: event.target.value });
+  };
+  const submitForm = (e: any) => {
+    console.log("Possible");
+    e.preventDefault();
+    signInWithEmailAndPassword(auth, form.email, form.password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        console.log(user);
+        navigate('/');
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+      });
+  };
   return (
     <div className="container-fluid">
       <div className="container">
@@ -14,10 +42,12 @@ const LogIn = () => {
                   <div className="form-label-group">
                     <input
                       type="email"
-                      id="inputEmail"
+                      id="email"
+                      name="email"
                       className="form-control"
                       placeholder="Email address"
                       required
+                      onChange={changeHandler}
                     />
                     <label>Email address</label>
                   </div>
@@ -25,9 +55,11 @@ const LogIn = () => {
                   <div className="form-label-group">
                     <input
                       type="password"
-                      id="inputPassword"
+                      name="password"
+                      id="password"
                       className="form-control"
                       placeholder="Password"
+                      onChange={changeHandler}
                       required
                     />
                     <label>Password</label>
@@ -46,6 +78,7 @@ const LogIn = () => {
                   <button
                     className="btn btn-lg btn-primary btn-block text-uppercase"
                     type="submit"
+                    onClick={submitForm}
                   >
                     Sign in
                   </button>
