@@ -59,7 +59,7 @@
   position: absolute;
   margin: auto;
   left: 50%;
-  padding-top: 30px;
+  padding-top: 10px;
   -webkit-transform: translateX(-50%);
   z-index: 9999;
 }
@@ -83,7 +83,7 @@
   -ms-transform: none;
   transform: none;
   border: 2px solid #ffffff;
-  top: 170px;
+  top: 150px;
 }
 #mouse-scroll .down-arrow-1 {
   margin-top: 6px;

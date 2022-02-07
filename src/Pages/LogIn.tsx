@@ -10,91 +10,95 @@ const StateInterface = {
 };
 
 const LogIn = () => {
-  const [form, setForm] = useState(StateInterface);
-  const navigate = useNavigate();
-  const changeHandler = (event: any) => {
-    setForm({ ...form, [event.target.name]: event.target.value });
-  };
-  const submitForm = (e: any) => {
-    console.log("Possible");
-    e.preventDefault();
-    signInWithEmailAndPassword(auth, form.email, form.password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        console.log(user);
-        navigate('/');
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-      });
-  };
+  // const [form, setForm] = useState(StateInterface);
+  // const navigate = useNavigate();
+  // const changeHandler = (event: any) => {
+  //   setForm({ ...form, [event.target.name]: event.target.value });
+  // };
+  // const submitForm = (e: any) => {
+  //   e.preventDefault();
+  //   signInWithEmailAndPassword(auth, form.email, form.password)
+  //     .then((userCredential) => {
+  //       // Signed in
+  //       const user = userCredential.user;
+  //       console.log(user);
+  //       navigate("/");
+  //     })
+  //     .catch((error) => {
+  //       const errorCode = error.code;
+  //       const errorMessage = error.message;
+  //     });
+  // };
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
   return (
     <div className="container-fluid">
-      <div className="container">
+      <div className="container text-left">
         <div className="row">
           <div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
             <div className="card card-signin my-5">
               <div className="card-body">
-                <h5 className="card-title text-center">Log In</h5>
+                <h2 className="card-title">Log In</h2>
                 <form className="form-signin">
+                <div className="form-label-group">
+                    <label className="text-left">Name </label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={name}
+                      className="form-control"
+                      required
+                      onChange={(e) => setName(e.target.value)}
+                    />
+                  </div>
                   <div className="form-label-group">
+                    <label className="text-left">Email </label>
                     <input
                       type="email"
                       id="email"
                       name="email"
+                      value={email}
                       className="form-control"
-                      placeholder="Email address"
                       required
-                      onChange={changeHandler}
+                      onChange={(e) => setEmail(e.target.value)}
                     />
-                    <label>Email address</label>
                   </div>
-
                   <div className="form-label-group">
+                    <label>Password</label>
                     <input
                       type="password"
                       name="password"
                       id="password"
+                      value={password}
                       className="form-control"
-                      placeholder="Password"
-                      onChange={changeHandler}
+                      onChange={(e) => setPassword(e.target.value)}
                       required
                     />
-                    <label>Password</label>
-                  </div>
-
-                  <div className="custom-control custom-checkbox mb-3">
-                    <input
-                      type="checkbox"
-                      className="custom-control-input"
-                      id="customCheck1"
-                    />
-                    <label className="custom-control-label">
-                      Remember password
-                    </label>
                   </div>
                   <button
-                    className="btn btn-lg btn-primary btn-block text-uppercase"
+                    className="btn btn-md btn-success btn-block text-uppercase mt-4"
                     type="submit"
-                    onClick={submitForm}
                   >
                     Sign in
                   </button>
+                  <h2>User Logged in : {auth.currentUser}</h2>
                   <hr className="my-4" />
                   <button
-                    className="btn btn-lg btn-google btn-block text-uppercase"
+                    className="btn btn-md  btn-block btn-outline-dark"
                     type="submit"
                   >
-                    <i className="fab fa-google mr-2"></i> Sign in with Google
+                    <i className="fa fa-google" aria-hidden="true"></i>&nbsp;
+                    Sign in with Google
                   </button>
+                  &nbsp;
                   <button
-                    className="btn btn-lg btn-facebook btn-block text-uppercase"
+                    className="btn btn-md btn-primary btn-block"
                     type="submit"
                   >
-                    <i className="fab fa-facebook-f mr-2"></i> Sign in with
-                    Facebook
+                    <i className="fa fa-facebook-square" aria-hidden="true"></i>
+                    &nbsp; Sign in with Facebook
                   </button>
                 </form>
               </div>

@@ -1,10 +1,14 @@
-import React from "react";
-import "../Components/Signup.style.css";
+import { useState } from "react";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  onAuthStateChanged,
+  signOut,
+} from "firebase/auth";
+import { auth } from "./Firebase-config";
 
 const SignUp = () => {
-  const register = () => {};
-
-  const login = () => {};
+  
   return (
     <div className="container bg-light">
       <h1 className="text-primary">Sign Up</h1>
@@ -32,7 +36,11 @@ const SignUp = () => {
 
         <div className="form-row"></div>
 
-        <button type="submit" className="btn btn-primary mb-4 mt-4">
+        <button
+          type="submit"
+          className="btn btn-primary mb-4 mt-4"
+          // onClick={register}
+        >
           Sign in
         </button>
       </form>

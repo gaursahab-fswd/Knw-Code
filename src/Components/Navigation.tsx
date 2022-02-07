@@ -75,7 +75,7 @@ const Navigation = () => {
               <NavLink to='/login' className="btn btn-outline-default Nav-login">  LogIn </NavLink> 
               &nbsp;&nbsp;
               <NavLink to='/signup' className="btn btn-outline-default Nav-Enr" type="submit">
-                Enroll Now
+               Sign Up
               </NavLink>
             </form>
           </div>

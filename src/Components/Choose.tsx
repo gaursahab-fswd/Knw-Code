@@ -12,7 +12,7 @@ const Choose = () =>{
                 <div className="col">
                    <h1 id='chooseus-text'>Why choose us?</h1>
                    <p id='chooseus-para'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem asperiores laudantium et, nam mollitia esse quae, provident neque repudiandae voluptatem eius ullam, accusantium aliquam corrupti! Natus totam placeat deserunt accusamus!</p>
-                   <button className='btn' id='chooseus-learn'>Learn More</button>
+                   <button className='btn text-left' id='chooseus-learn'>Learn More</button>
                 </div>
             </div>
         </div>
