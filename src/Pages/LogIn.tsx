@@ -1,13 +1,15 @@
 import React, { useState } from "react";
-import "../Components/Login.style.css";
-import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "./Firebase-config";
+import { useDispatch } from "react-redux";
+// import "../Components/Login.style.css";
+// import { signInWithEmailAndPassword } from "firebase/auth";
+// import { auth } from "./Firebase-config";
 import { useNavigate } from "react-router-dom";
+import { login } from "../features/userSlice";
 
-const StateInterface = {
-  email: "",
-  password: "",
-};
+// const StateInterface = {
+//   email: "",
+//   password: "",
+// };
 
 const LogIn = () => {
   // const [form, setForm] = useState(StateInterface);
@@ -32,6 +34,19 @@ const LogIn = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const dispatch = useDispatch();
+  const handleSubmit = (e:any) =>{
+    e.preventDefault();
+
+    dispatch(
+      login({
+        name:name,
+        email:email,
+        password:password,
+        loggedIn:true,
+      })
+    )
+  }
   return (
     <div className="container-fluid">
       <div className="container text-left">
@@ -40,7 +55,7 @@ const LogIn = () => {
             <div className="card card-signin my-5">
               <div className="card-body">
                 <h2 className="card-title">Log In</h2>
-                <form className="form-signin">
+                <form className="form-signin" onSubmit={(e)=>handleSubmit(e)}>
                 <div className="form-label-group">
                     <label className="text-left">Name </label>
                     <input
@@ -83,7 +98,6 @@ const LogIn = () => {
                   >
                     Sign in
                   </button>
-                  <h2>User Logged in : {auth.currentUser}</h2>
                   <hr className="my-4" />
                   <button
                     className="btn btn-md  btn-block btn-outline-dark"
