@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/Knw-Code/static/css/main.1ab33fdc.css",
+    "main.js": "/Knw-Code/static/js/main.d2f82b71.js",
+    "static/media/choose-us.png": "/Knw-Code/static/media/choose-us.6584807ccdffe18aa03e.png",
+    "static/media/banner-icon.png": "/Knw-Code/static/media/banner-icon.9f2a2d43d1ee42c69e65.png",
+    "static/media/logo.png": "/Knw-Code/static/media/logo.5a464cafd231a16cf5d0.png",
+    "index.html": "/Knw-Code/index.html",
+    "main.1ab33fdc.css.map": "/Knw-Code/static/css/main.1ab33fdc.css.map",
+    "main.d2f82b71.js.map": "/Knw-Code/static/js/main.d2f82b71.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.1ab33fdc.css",
+    "static/js/main.d2f82b71.js"
+  ]
+}
