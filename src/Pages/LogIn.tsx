@@ -1,52 +1,29 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-// import "../Components/Login.style.css";
-// import { signInWithEmailAndPassword } from "firebase/auth";
-// import { auth } from "./Firebase-config";
-import { useNavigate } from "react-router-dom";
-import { login } from "../features/userSlice";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { loginUser } from "../Redux/Action/userAction";
+import { rootState } from "../Redux/type";
+import { useState } from "react";
+import { Navigate, useNavigate } from "react-router-dom";
 
-// const StateInterface = {
-//   email: "",
-//   password: "",
-// };
+
+const StateInterface = {
+  email: "",
+  password: "",
+};
 
 const LogIn = () => {
-  // const [form, setForm] = useState(StateInterface);
-  // const navigate = useNavigate();
-  // const changeHandler = (event: any) => {
-  //   setForm({ ...form, [event.target.name]: event.target.value });
-  // };
-  // const submitForm = (e: any) => {
-  //   e.preventDefault();
-  //   signInWithEmailAndPassword(auth, form.email, form.password)
-  //     .then((userCredential) => {
-  //       // Signed in
-  //       const user = userCredential.user;
-  //       console.log(user);
-  //       navigate("/");
-  //     })
-  //     .catch((error) => {
-  //       const errorCode = error.code;
-  //       const errorMessage = error.message;
-  //     });
-  // };
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const dispatch = useDispatch();
-  const handleSubmit = (e:any) =>{
-    e.preventDefault();
+  const navigate = useNavigate();
+  const [form, setForm] = useState(StateInterface)
 
-    dispatch(
-      login({
-        name:name,
-        email:email,
-        password:password,
-        loggedIn:true,
-      })
-    )
-  }
+    const changeHandler = (event: any) => {
+        setForm({ ...form, [event.target.name]: event.target.value });
+    }
+    const submitForm = (e: any) => {
+        e.preventDefault();
+        
+        dispatch(loginUser(form, navigate));
+    }
   return (
     <div className="container-fluid">
       <div className="container text-left">
@@ -55,29 +32,17 @@ const LogIn = () => {
             <div className="card card-signin my-5">
               <div className="card-body">
                 <h2 className="card-title">Log In</h2>
-                <form className="form-signin" onSubmit={(e)=>handleSubmit(e)}>
-                <div className="form-label-group">
-                    <label className="text-left">Name </label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={name}
-                      className="form-control"
-                      required
-                      onChange={(e) => setName(e.target.value)}
-                    />
-                  </div>
+                <form className="form-signin">
                   <div className="form-label-group">
                     <label className="text-left">Email </label>
                     <input
                       type="email"
                       id="email"
                       name="email"
-                      value={email}
                       className="form-control"
                       required
-                      onChange={(e) => setEmail(e.target.value)}
+                      onChange={changeHandler}
+
                     />
                   </div>
                   <div className="form-label-group">
@@ -86,15 +51,15 @@ const LogIn = () => {
                       type="password"
                       name="password"
                       id="password"
-                      value={password}
                       className="form-control"
-                      onChange={(e) => setPassword(e.target.value)}
                       required
+                      onChange={changeHandler}
+
                     />
                   </div>
                   <button
                     className="btn btn-md btn-success btn-block text-uppercase mt-4"
-                    type="submit"
+                    type="submit" onClick={submitForm}
                   >
                     Sign in
                   </button>

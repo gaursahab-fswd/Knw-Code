@@ -1,9 +1,18 @@
 import React from "react";
 import Logo from "../common/logo.png";
 import "./Navigation.styles.css";
-import { BrowserRouter as Router, Routes, Route, NavLink} from 'react-router-dom';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  NavLink,
+} from "react-router-dom";
+import { useSelector } from "react-redux";
+import { rootState } from "../Redux/type";
 
 const Navigation = () => {
+  const useruser: any = useSelector<rootState>((state) => state.user);
+  const loggedIn = useruser.loggedIn;
   return (
     <div>
       <nav className="navbar navbar-expand-lg navbar-light  position-sticky">
@@ -70,14 +79,31 @@ const Navigation = () => {
                 <a className="nav-link">Contact us</a>
               </li>
             </ul>
-            <form className="d-flex justify-content-center">
-            
-              <NavLink to='/login' className="btn btn-outline-default Nav-login">  LogIn </NavLink> 
-              &nbsp;&nbsp;
-              <NavLink to='/signup' className="btn btn-outline-default Nav-Enr" type="submit">
-               Sign Up
+
+            {!loggedIn ? (
+              <form className="d-flex justify-content-center">
+                <NavLink
+                  to="/login"
+                  className="btn btn-outline-default Nav-login"
+                >
+                  LogIn
+                </NavLink>
+                <NavLink
+                  to="/signup"
+                  className="btn btn-outline-default Nav-Enr"
+                  type="submit"
+                >
+                  Sign Up
+                </NavLink>
+              </form>
+            ) : (
+              <form  className="d-flex justify-content-center">
+              <NavLink className="nav-link btn-btn-primary" to="/">
+              
+                {useruser.loginData.user.name}
               </NavLink>
-            </form>
+               </form>
+            )}
           </div>
         </div>
       </nav>
