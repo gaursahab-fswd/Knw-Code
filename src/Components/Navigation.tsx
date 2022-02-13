@@ -97,12 +97,11 @@ const Navigation = () => {
                 </NavLink>
               </form>
             ) : (
-              <form  className="d-flex justify-content-center">
-              <NavLink className="nav-link btn-btn-primary" to="/">
-              
-                {useruser.loginData.user.name}
-              </NavLink>
-               </form>
+              <form className="d-flex justify-content-center">
+                <NavLink className="nav-link btn-btn-primary" to="/">
+                  {useruser.loginData.user.name}
+                </NavLink>
+              </form>
             )}
           </div>
         </div>

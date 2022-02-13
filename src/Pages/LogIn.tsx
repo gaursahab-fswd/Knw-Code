@@ -5,7 +5,6 @@ import { rootState } from "../Redux/type";
 import { useState } from "react";
 import { Navigate, useNavigate } from "react-router-dom";
 
-
 const StateInterface = {
   email: "",
   password: "",
@@ -14,16 +13,16 @@ const StateInterface = {
 const LogIn = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const [form, setForm] = useState(StateInterface)
+  const [form, setForm] = useState(StateInterface);
 
-    const changeHandler = (event: any) => {
-        setForm({ ...form, [event.target.name]: event.target.value });
-    }
-    const submitForm = (e: any) => {
-        e.preventDefault();
-        
-        dispatch(loginUser(form, navigate));
-    }
+  const changeHandler = (event: any) => {
+    setForm({ ...form, [event.target.name]: event.target.value });
+  };
+  const submitForm = (e: any) => {
+    e.preventDefault();
+
+    dispatch(loginUser(form, navigate));
+  };
   return (
     <div className="container-fluid">
       <div className="container text-left">
@@ -42,7 +41,6 @@ const LogIn = () => {
                       className="form-control"
                       required
                       onChange={changeHandler}
-
                     />
                   </div>
                   <div className="form-label-group">
@@ -54,12 +52,12 @@ const LogIn = () => {
                       className="form-control"
                       required
                       onChange={changeHandler}
-
                     />
                   </div>
                   <button
                     className="btn btn-md btn-success btn-block text-uppercase mt-4"
-                    type="submit" onClick={submitForm}
+                    type="submit"
+                    onClick={submitForm}
                   >
                     Sign in
                   </button>

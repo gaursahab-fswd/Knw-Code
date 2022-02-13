@@ -12,9 +12,8 @@ type responseType = {
   user: any
 }
 const signIn = async (payload: any) => {
-   // console.log('login', payload);
+  // console.log('login', payload);
   const response = await fetch('http://myshop.hombrehr.com/api/user/login', {
-      
     method: 'post',
     headers: new Headers({
       'Content-Type': 'application/json',
@@ -22,9 +21,9 @@ const signIn = async (payload: any) => {
     }),
     body: JSON.stringify(payload),
   })
-  console.log('login', response);
+  console.log('login', response)
   if (response.status === 200) {
-     // console.log('login', payload);
+    // console.log('login', payload);
     let responseBody: any = await response.json()
     return responseBody
   }
@@ -55,13 +54,13 @@ function* LoginUserfunction(data: any) {
     yield put({ type: USER_LOADING })
     const response: responseType = yield call<any>(signIn, payload)
     if (response.user) {
-        console.log('Login user function',response);
+      console.log('Login user function', response)
       yield put({
         type: USER_LOGIN_COMPLETE,
         payload: response,
       })
-      navigate('/');
-    } 
+      navigate('/')
+    }
   } catch (err) {
     console.log('error', err)
   }
@@ -78,8 +77,8 @@ function* SignUpUserfunction(data: any) {
         payload: response,
       })
 
-      navigate('/');
-    } 
+      navigate('/')
+    }
   } catch (err) {
     console.log('error', err)
   }
